@@ -5,7 +5,7 @@ ENV MONGO_DB_USERNAME=admin \
 
 RUN mkdir -p /home/backend
 
-COPY . /home/backend
+COPY ./backend /home/backend
 
 # set default dir so that next commands executes in /home/app dir
 WORKDIR /home/backend
@@ -14,5 +14,5 @@ WORKDIR /home/backend
 RUN npm install
 
 # no need for /home/app/server.js because of WORKDIR
-CMD ["npm,", "start"]
+CMD ["node", "server.js"]
 
