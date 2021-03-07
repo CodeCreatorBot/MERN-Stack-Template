@@ -1,0 +1,6 @@
+version: '3'
+services:
+  ui:
+    image: docker.pkg.github.com/codecreatorbot/merntemplate/react-app:1.0
+    ports:
+      - 3000:3000
