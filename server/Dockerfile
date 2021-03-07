@@ -1,25 +1,18 @@
+
 FROM node:latest
 
-ENV PATH ./app/node_modules/.bin:$PATH
+ENV MONGO_DB_USERNAME=admin \
+    MONGO_DB_PWD=password
 
-RUN mkdir -p /home/app
+RUN mkdir -p /home/backend
 
-<<<<<<< HEAD:ui/DockerFile
-COPY ./app /home/app
-=======
 COPY ./backend /home/backend
->>>>>>> Server:server/Dockerfile
 
 # set default dir so that next commands executes in /home/app dir
-WORKDIR /home/app
+WORKDIR /home/backend
 
 # will execute npm install in /home/app because of WORKDIR
-RUN npm install --silent
+RUN npm install
 
 # no need for /home/app/server.js because of WORKDIR
-<<<<<<< HEAD:ui/DockerFile
-CMD ["npm", "start"]
-=======
 CMD ["node", "server.js"]
-
->>>>>>> Server:server/Dockerfile

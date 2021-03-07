@@ -24,5 +24,5 @@ mongoose.connect(`${mongoUrlDocker}/${databaseName}`, mongoClientOptions).then(
 );
 
 app.listen(port, () => {
-    console.log(`Server is up and runing on port ${port}`);
+    console.log(`Server is runing and listening to port ${port}`);
 })
